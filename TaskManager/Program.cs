@@ -1,7 +1,15 @@
+using BLL;
+using DAL;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connectionString = "Server=localhost\\SQLEXPRESS;Database=woker;Trusted_Connection=True;TrustServerCertificate=True";
+builder.Services.AddDbContext<ProjectDbContext>(x => x.UseSqlServer(connectionString));
+DIConfigurationBll.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
