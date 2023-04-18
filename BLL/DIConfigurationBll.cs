@@ -1,4 +1,6 @@
-﻿using DAL;
+﻿using BLL.Interfaces;
+using BLL.Services;
+using DAL;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,7 @@ namespace BLL
     {
         public static void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IAuthorization, Authorization>();
             DIConfigurationDal.ConfigureServices(services);
         }
     }
