@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\LogIn\LogIn.css" />
-    <None Include="wwwroot\LogIn\LogIn.js" />
+    <None Include="wwwroot\authorization\authorization.css" />
+    <None Include="wwwroot\authorization\authorization.js" />
   </ItemGroup>
 
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace TaskManagerUI.Controllers
             return View();
         }
 
-        public IActionResult LogIn()
+        public IActionResult Authorization()
         {
             return View();
         }

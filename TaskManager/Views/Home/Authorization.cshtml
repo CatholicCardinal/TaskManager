@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Авторизация</title>
-<link href="~/LogIn/LogIn.css" rel="stylesheet" />
+	<link href="~/authorization/authorization.css" rel="stylesheet" />
 </head>
 <body>
 <div class="container" id="container">
@@ -37,7 +37,7 @@
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button  asp-controller="Autorization" asp-action="Index">>Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -55,6 +55,6 @@
 		</div>
 	</div>
 </div>
-	<script src="~/LogIn/LogIn.js"></script>
+	<script src="~/authorization/authorization.js"></script>
 </body>
 </html>
