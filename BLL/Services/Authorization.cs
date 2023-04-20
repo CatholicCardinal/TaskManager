@@ -17,7 +17,7 @@ namespace BLL.Services
 			_db = db;
 		}
 
-		public void LogIn(string email, string password)
+		public void Login(string email, string password)
 		{
 			throw new NotImplementedException();
 		}

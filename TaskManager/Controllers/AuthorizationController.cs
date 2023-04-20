@@ -23,15 +23,15 @@ namespace TaskManagerUI.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Login([FromBody] LoginModel  model)
+		public ActionResult Login(LoginModel  model)
 		{
 			// Ваш код для проверки учетных данных пользователя
-			_authorization.LogIn(model.Email, model.Password);
+			_authorization.Login(model.Email, model.Password);
 			return View();
 		}
 
 		[HttpPost]
-		public ActionResult Registrate([FromBody] RegistarateModel model)
+		public ActionResult Registrate(RegistarateModel model)
 		{
 			// Ваш код для создания нового пользователя
 			_authorization.Registrate(model.Name, model.Email, model.Password);

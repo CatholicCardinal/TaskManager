@@ -8,7 +8,7 @@ namespace BLL.Interfaces
 {
 	public interface IAuthorization
 	{
-		public void LogIn(string email, string password);
+		public void Login(string email, string password);
 		public void Registrate(string Name, string email, string password);
 	}
 }
