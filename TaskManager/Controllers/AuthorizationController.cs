@@ -22,11 +22,19 @@ namespace TaskManagerUI.Controllers
 			return View();
 		}
 
+
 		[HttpPost]
-		public ActionResult Login(LoginModel  model)
+		public ActionResult Authorization(RegistarateModel  model)
 		{
 			// Ваш код для проверки учетных данных пользователя
-			_authorization.Login(model.Email, model.Password);
+			var user = _authorization.GetUserByLoginAndPassword(model.Email, model.Password);
+			if (user != null)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+
+			ViewBag.ErrorMessage = "Please enter a valid email address or password";
+
 			return View();
 		}
 

@@ -1,5 +1,7 @@
 ﻿using BLL.Interfaces;
+using DAL.Models;
 using DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +18,16 @@ namespace BLL.Services
 		{
 			_db = db;
 		}
-
-		public void Login(string email, string password)
+		public List<User> GetAllUsers(string email, string password)
 		{
-			throw new NotImplementedException();
+			return _db.Users.GetAll().ToList();
+		}
+
+		public User GetUserByLoginAndPassword(string email, string password)
+		{
+			var allUsers = _db.Users.GetAll().ToList();
+			var user = allUsers.Find(x => x.Email == email && x.Password == password);
+			return user;
 		}
 
 		public void Registrate(string Name, string email, string password)

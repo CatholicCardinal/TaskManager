@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace BLL.Interfaces
 {
 	public interface IAuthorization
 	{
-		public void Login(string email, string password);
+		public User GetUserByLoginAndPassword(string email, string password);
 		public void Registrate(string Name, string email, string password);
 	}
 }

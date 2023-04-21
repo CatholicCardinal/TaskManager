@@ -24,7 +24,7 @@ namespace DAL.Repositories
             return _dbSet.SingleOrDefault(x => x.Id == id);
         }
 
-        public IQueryable<T> GetAll()
+		public IQueryable<T> GetAll()
         {
             return _dbSet;
         }

@@ -225,4 +225,9 @@ input {
         width: 40px;
     }
 
-
+.error-message {
+    display: block;
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+}
