@@ -19,12 +19,16 @@ namespace TaskManagerUI.Controllers
 		[HttpGet]
 		public ActionResult Authorization()
 		{
+			if(TempData["Error"] as string != null) 
+			{
+			  ViewBag.ErrorMessage = TempData["Error"] as string;
+			}
 			return View();
 		}
 
 
 		[HttpPost]
-		public ActionResult Authorization(RegistarateModel  model)
+		public ActionResult Login(RegistarateModel  model)
 		{
 			// Ваш код для проверки учетных данных пользователя
 			var user = _authorization.GetUserByLoginAndPassword(model.Email, model.Password);
@@ -33,17 +37,25 @@ namespace TaskManagerUI.Controllers
 				return RedirectToAction("Index", "Home");
 			}
 
-			ViewBag.ErrorMessage = "Please enter a valid email address or password";
+			TempData["ErrorLogin"] = "Please enter a valid email address or password";
 
-			return View();
+			//return View();
+			return RedirectToAction("Authorization", "Authorization");
 		}
 
 		[HttpPost]
-		public ActionResult Registrate(RegistarateModel model)
+		public ActionResult Registration(RegistarateModel model)
 		{
 			// Ваш код для создания нового пользователя
-			_authorization.Registrate(model.Name, model.Email, model.Password);
-			return View();
+			if(_authorization.AddUser(model.Name, model.Email, model.Password) == 1)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+
+			TempData["ErrorRegistration"] = "Entering a email address is existing";
+
+			//return View();
+			return RedirectToAction("Authorization", "Authorization");
 		}
 	}
 }

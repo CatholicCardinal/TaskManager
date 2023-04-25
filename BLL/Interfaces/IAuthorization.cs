@@ -10,6 +10,6 @@ namespace BLL.Interfaces
 	public interface IAuthorization
 	{
 		public User GetUserByLoginAndPassword(string email, string password);
-		public void Registrate(string Name, string email, string password);
+		public int AddUser(string name, string email, string password);
 	}
 }

@@ -30,9 +30,20 @@ namespace BLL.Services
 			return user;
 		}
 
-		public void Registrate(string Name, string email, string password)
+		public int AddUser(string name, string email, string password)
 		{
-			throw new NotImplementedException();
+			var allUsers = _db.Users.GetAll().ToList();
+			var finding = allUsers.Find(x => x.Email == email);
+			if (finding == null)
+			{
+				User user = new User { FirstName = name,  Email = email, Password = password };
+				_db.Users.Save(user);
+				_db.Save();
+
+				return 1;
+			}
+
+			return 0;
 		}
 
 	}
