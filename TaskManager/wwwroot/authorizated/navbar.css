@@ -169,3 +169,25 @@ article {
     margin: 0 auto;
     padding: 10px;
 }
+
+body {
+    margin: 0;
+}
+
+/* при открытом выпадающем списке добавляем класс "active" к кнопке "Services" */
+.nav-dropdown.active + #nav-btn {
+    color: #dcdcdc; /* изменяем цвет текста */
+    background: #212121; /* изменяем цвет фона */
+}
+
+/* при наведении на кнопку "Services" в обычном состоянии */
+#nav-btn:hover:not(.active) {
+    background: #2581dc;
+    color: #fff;
+}
+
+/* при наведении на кнопку "Services" в состоянии "active" */
+#nav-btn:hover.active {
+    background: #212121;
+    color: #dcdcdc;
+}
