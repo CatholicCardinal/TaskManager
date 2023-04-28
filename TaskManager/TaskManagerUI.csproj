@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\authorizated\navbar.css" />
+    <Content Remove="wwwroot\authorizated\navbar.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\authorizated\navbar.css" />
+    <None Include="wwwroot\authorizated\navbar.js" />
     <None Include="wwwroot\authorization\authorization.css" />
     <None Include="wwwroot\authorization\authorization.js" />
   </ItemGroup>

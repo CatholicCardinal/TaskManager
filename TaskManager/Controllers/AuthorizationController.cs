@@ -26,7 +26,6 @@ namespace TaskManagerUI.Controllers
 			return View();
 		}
 
-
 		[HttpPost]
 		public ActionResult Login(RegistarateModel  model)
 		{
@@ -34,7 +33,7 @@ namespace TaskManagerUI.Controllers
 			var user = _authorization.GetUserByLoginAndPassword(model.Email, model.Password);
 			if (user != null)
 			{
-				return RedirectToAction("Index", "Home");
+				return RedirectToAction("Index", "Workspace");
 			}
 
 			TempData["ErrorLogin"] = "Please enter a valid email address or password";
