@@ -9,8 +9,8 @@ namespace TaskManagerUI.Controllers
 	public class AuthorizationController : Controller
 	{
 		private readonly ILogger<AuthorizationController> _logger;
-		private readonly IAuthorization _authorization;
-		public AuthorizationController(ILogger<AuthorizationController> logger, IAuthorization authorization)
+		private readonly IAuthorizationService _authorization;
+		public AuthorizationController(ILogger<AuthorizationController> logger, IAuthorizationService authorization)
 		{
 			_logger = logger;
 			_authorization = authorization;
@@ -33,7 +33,7 @@ namespace TaskManagerUI.Controllers
 			var user = _authorization.GetUserByLoginAndPassword(model.Email, model.Password);
 			if (user != null)
 			{
-				return RedirectToAction("Index", "Workspace");
+				return RedirectToAction("WorkspaceMenu", "Workspace");
 			}
 
 			TempData["ErrorLogin"] = "Please enter a valid email address or password";

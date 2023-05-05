@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-	public class Authorization : IAuthorization
+	public class AuthorizationService : IAuthorizationService
 	{
 		private readonly IUnitOfWork _db;
 
-		public Authorization(IUnitOfWork db)
+		public AuthorizationService(IUnitOfWork db)
 		{
 			_db = db;
 		}

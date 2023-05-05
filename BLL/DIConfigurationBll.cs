@@ -14,7 +14,7 @@ namespace BLL
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAuthorization, Authorization>();
+            services.AddTransient<IAuthorizationService, AuthorizationService>();
             DIConfigurationDal.ConfigureServices(services);
         }
     }

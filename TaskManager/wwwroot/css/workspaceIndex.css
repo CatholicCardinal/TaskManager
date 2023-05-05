@@ -1,0 +1,97 @@
+.main-menu .container {
+    display: flex;
+}
+
+.main-menu .sidebar {
+    background-color: #eee;
+    width: 250px;
+    padding: 20px;
+}
+
+.main-menu .workspaces {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.main-menu .workspace-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+
+    .main-menu .workspace-button:hover {
+        color: #0079bf;
+    }
+
+.main-menu .workspace-functions {
+    display: none;
+    margin-bottom: 10px;
+}
+
+    .main-menu .workspace-functions li {
+        margin-left: 10px;
+    }
+
+    .main-menu .workspace-functions a {
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+        .main-menu .workspace-functions a:hover {
+            color: #0079bf;
+        }
+
+.main-menu .add-workspace {
+    background-color: #0079bf;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.main-menu .mainview {
+    flex: 1;
+    padding: 20px;
+}
+
+.main-menu .boards {
+    margin-bottom: 20px;
+}
+
+    .main-menu .boards h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .main-menu .boards ul {
+        list-style: none;
+    }
+
+    .main-menu .boards a {
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+        .main-menu .boards a:hover {
+            color: #0079bf;
+        }
+
+.main-menu .add-board {
+    background-color: #0079bf;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}

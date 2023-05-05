@@ -4,7 +4,7 @@ namespace TaskManagerUI.Controllers
 {
 	public class WorkspaceController : Controller
 	{
-		public IActionResult Index()
+		public IActionResult WorkspaceMenu()
 		{
 
 			return View();

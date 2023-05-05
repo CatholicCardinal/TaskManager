@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-	public interface IAuthorization
+	public interface IAuthorizationService
 	{
 		public User GetUserByLoginAndPassword(string email, string password);
 		public int AddUser(string name, string email, string password);
