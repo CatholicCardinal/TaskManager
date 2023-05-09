@@ -1,11 +1,13 @@
 .main-menu .container {
     display: flex;
+    height: calc(102.5vh - 150px);
 }
 
 .main-menu .sidebar {
     background-color: #eee;
     width: 250px;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .main-menu .workspaces {
@@ -61,6 +63,7 @@
 .main-menu .mainview {
     flex: 1;
     padding: 20px;
+
 }
 
 .main-menu .boards {

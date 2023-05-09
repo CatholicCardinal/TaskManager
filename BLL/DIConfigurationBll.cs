@@ -15,7 +15,8 @@ namespace BLL
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IAuthorizationService, AuthorizationService>();
-            DIConfigurationDal.ConfigureServices(services);
+			services.AddTransient<IWorkspaceService, WorkspaceService>();
+			DIConfigurationDal.ConfigureServices(services);
         }
     }
 }

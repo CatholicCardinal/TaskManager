@@ -22,9 +22,14 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProjectDbContext).Assembly);
-        }
+            base.OnModelCreating(modelBuilder);
+			modelBuilder.Entity<User>().HasData(
+				new User { Id = 1, FirstName = "Vlad", LastName = "Fedorov", Email ="vlad.fiodorov11@gmail.com", Password="123"},
+				new User { Id = 2, FirstName = "Pasha", LastName = "Shlyaga", Email ="pasha@gmail.com", Password= "1234" },
+				new User { Id = 3, FirstName = "Nikita", LastName = "Ponomarev", Email ="nikita@gmail.com", Password = "12345" }
+		);
+		}
     }
 }

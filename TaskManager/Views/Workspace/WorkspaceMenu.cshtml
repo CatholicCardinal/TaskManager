@@ -1,11 +1,14 @@
-﻿@{
+﻿@using DAL.Models;
+@{
     Layout = "~/Views/Shared/Authorizated/_Layout.cshtml";
 }
+@model IEnumerable<Workspace>
 <link href="~/css/workspaceIndex.css" rel="stylesheet" />
 
 <div class="main-menu" id="main-menu">
 	<div class="container">
 		<div class="sidebar">
+			<h6>Рабочие пространства</h6>
 			<ul class="workspaces">
 				<li>
 					<button class="workspace-button">Workspace 1</button>
@@ -25,6 +28,22 @@
 				</li>
 				<li>
 					<button class="workspace-button">Workspace 3</button>
+					<ul class="workspace-functions">
+						<li><a href="#">Function 1</a></li>
+						<li><a href="#">Function 2</a></li>
+						<li><a href="#">Function 3</a></li>
+					</ul>
+				</li>
+				<li>
+					<button class="workspace-button">Workspace 4</button>
+					<ul class="workspace-functions">
+						<li><a href="#">Function 1</a></li>
+						<li><a href="#">Function 2</a></li>
+						<li><a href="#">Function 3</a></li>
+					</ul>
+				</li>
+				<li>
+					<button class="workspace-button">Workspace 5</button>
 					<ul class="workspace-functions">
 						<li><a href="#">Function 1</a></li>
 						<li><a href="#">Function 2</a></li>
@@ -59,6 +78,17 @@
 					<li><a href="#">Board 3</a></li>
 				</ul>
 			</div>
+			<table>
+			
+					@foreach (var item in Model)
+					{
+						<tr>
+							<h2>@item.Name</h2>
+						</tr>
+
+					}
+			
+			</table>
 			<button class="add-board">+ Add Board</button>
 		</div>
 	</div>

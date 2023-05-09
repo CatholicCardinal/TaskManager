@@ -13,9 +13,9 @@ namespace DAL.Repositories
         private readonly ProjectDbContext _projectDbContext;
         private readonly DbSet<T> _dbSet;
 
-        public BaseRepository(ProjectDbContext internshipDbContext)
+        public BaseRepository(ProjectDbContext projectDbContext)
         {
-            _projectDbContext = internshipDbContext;
+            _projectDbContext = projectDbContext;
             _dbSet = _projectDbContext.Set<T>();
         }
 

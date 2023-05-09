@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using BLL.Interfaces;
+using DAL.Models;
 using DAL.Repositories;
 using System;
 using System.Collections;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-	public class WorkspaceService
+	public class WorkspaceService : IWorkspaceService
 	{
 		private readonly IUnitOfWork _db;
 
@@ -21,6 +22,13 @@ namespace BLL.Services
 		public IEnumerable<Workspace> GetAllWorkspacesList()
 		{
 			return _db.Workspaces.GetAll();
+		}
+
+		public IEnumerable<UserWorkspace> GetAllWorkspacesByUser(int id)
+		{
+			var user = _db.Users.Get(id);
+			var UserWorkspaces = user.UserWorkspaces.Where(x => x.UserID == id);
+			return UserWorkspaces;
 		}
 
 		public Workspace GetWorkspaceById(int id)
